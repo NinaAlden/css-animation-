@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: ;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    min-height: 150px;
+    max-width: 1400px;
+    width: 100%;
+    justify-content: center;
+}
+h1 {
+    color: #000000;
+    text-align: center;
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 21px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgb(168, 165, 165);
+}
+.animate__animated.animate__heartBeat {
+    animation: infinite;
+    animation-duration: 10s;
+}   /*varför fungerar inte att göra såhär?*/
+.container {
+    min-height: 500px;
+    max-width: 1400px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    flex-direction: row;
+    justify-content: space-between;
+}
+.box {
+    min-height: 500px;
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.dancing, .thinking, .cliff {
+    min-height: 450px;
+    max-width: 450px;
+    width: 100%;
+    fill-opacity: 0;
+    stroke: black;
+}
+.dancing {
+    stroke-width: 15px;
+    animation: imgZoom 2s ease-in-out infinite;
+}
+@keyframes imgZoom {
+    0% {transform: scale(1) rotate(0deg);}
+    50%{transform: scale(1.1) rotate(10deg);}
+    100% {transform: scale(1) rotate(0deg);}
+}
+.one:hover {
+    background-color: #3db439;
+    transition: all 0.5s ease-in-out;
+}
+.dancing:hover {
+    stroke:rgb(10, 117, 46);
+    transition: all 0.5s ease-in-out;
+}
+.thinking {
+    stroke-width: 2px;
+}
+.question {
+    min-height: 70px;
+    max-width: 70px;
+    width: 100%;
+    fill-opacity: 0;
+    stroke: black;
+    stroke-width: 50px;
+    stroke-dashoffset: 0px;
+    stroke-dasharray: 3000px;
+    animation: "question" 4s ease-in-out infinite;
+    position: fixed;
+    z-index: 1;
+}
+@keyframes question { 
+    0% { stroke-dashoffset: 3000;}
+    100% { stroke-dashoffset: 0;}
+}
+.cliff {
+    stroke-width: 7px;
+    animation: slide 5s infinite;
+}
+@keyframes slide {
+    0% {transform:translate(0);}
+    50% {transform:translate(50px);}
+}
+.thinking:hover, .question:hover, .cliff:hover {
+    opacity: 50%;
+    transition: all 0.5s ease-in-out;
+}
